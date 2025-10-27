@@ -1,0 +1,32 @@
+
+import java.util.Scanner;
+
+public class Ejercicio13 {
+    public static void main(String[] args) {
+
+        /*Sera el contador de vocales*/
+        int Vocal = 0;
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Escribe una palabra: ");
+        String palabra = sc.nextLine(); // Leer la línea completa
+
+        for (int i = 0; i < palabra.length() ; i++) {
+            char c = palabra.charAt(i);
+
+            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' ||
+                    c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U') {
+                /*Asi comprueba si es miniscula o mayuscula y la cuenta igual*/
+                System.out.println(c + " es una vocal");
+                Vocal = Vocal + 1;
+            } else {
+                System.out.println(c + " no es una vocal");
+            }
+        }
+
+        System.out.println();
+        System.out.println("Tienes " + Vocal + " vocales en tu palabra");
+
+    }
+}
