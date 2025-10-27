@@ -1,0 +1,39 @@
+import java.util.Random;
+
+public class Ejercicio19 {
+    public static void main(String[] args) {
+        int[] numeros = new int[15];
+        Random random = new Random();
+
+        // Generar 15 números aleatorios del 1 al 5
+        for (int i = 0; i < numeros.length; i++) {
+            numeros[i] = random.nextInt(5) + 1;
+        }
+
+        // Mostrar los números generados
+        System.out.print("Números generados: ");
+        for (int i = 0; i < numeros.length; i++) {
+            System.out.print(numeros[i] + " ");
+        }
+        System.out.println();
+
+        int cadena = 1;        // longitud actual de secuencia
+        int cadenagrande = 1;  // longitud máxima encontrada
+
+        // Recorrer el array desde el segundo elemento
+        for (int i = 1; i < numeros.length; i++) {
+            if (numeros[i] == numeros[i - 1]) {
+                cadena++; // sigue la secuencia
+            } else {
+                cadena = 1; // se rompe la secuencia
+            }
+
+            if (cadena > cadenagrande) {
+                cadenagrande = cadena;
+            }
+        }
+
+        System.out.println("La cadena más grande de números consecutivos iguales ha sido de " + cadenagrande);
+    }
+}
+
